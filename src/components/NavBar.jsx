@@ -9,7 +9,7 @@ function NavBar() {
         localStorage.setItem("Notes", JSON.stringify([{}]))
     }
     const addnote = () => {
-        if (notetitle == "" || notenote == "") {
+        if (notetitle === "" || notenote === "") {
             alert("Please fill all the fields")
             return 0
         }
@@ -23,7 +23,7 @@ function NavBar() {
         alert("Note successfully created")
     }
     return (
-        <div className="NavBar container">
+        <div className="NavBar ">
             <div className="nav">
                 <div>
                     logo
