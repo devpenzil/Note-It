@@ -1,0 +1,26 @@
+$base: #ade490;
+$text: #521b6f;
+
+.conatiner {
+  width: 90%;
+  margin: auto;
+}
+.NavBar {
+  width: 100%;
+  height: 60px;
+  color: $text;
+  //   background-color: $base;
+
+  .nav {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .create {
+      padding: 10px;
+    }
+  }
+}
