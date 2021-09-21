@@ -5,8 +5,9 @@ function NavBar() {
     const [shownav, setShownav] = useState(false)
     const [notetitle, setNotetitle] = useState("")
     const [notenote, setNotenote] = useState("")
+    
     if (localStorage.length === 0) {
-        localStorage.setItem("Notes", JSON.stringify([{}]))
+        localStorage.setItem("Notes", JSON.stringify([{title : "Create your Simple Notes" , notecontent : "This is a Simple app for store your simple notes for easy access"}]))
     }
     const addnote = () => {
         if (notetitle === "" || notenote === "") {
@@ -22,6 +23,10 @@ function NavBar() {
         setNotetitle("")
         alert("Note successfully created")
     }
+    const deleteallnotes = () => {
+        alert("delet")
+            localStorage.removeItem("Notes") 
+    }
     return (
         <div className="NavBar ">
             <div className="nav">
@@ -30,6 +35,7 @@ function NavBar() {
                 </div>
                 <div>
                     <button onClick={()=>setShownav(true)} className="create">🖋 Create a new note</button>
+                    <button onClick={ deleteallnotes } className="create">🗑 Delete all notes note</button>
                 </div>
             </div>
             {shownav ?

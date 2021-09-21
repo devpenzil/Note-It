@@ -10,12 +10,19 @@ function Notes() {
     useEffect(() => {
         fetchingnotes()
     }, [])
+    const deletenotes = (id) => {
+        
+        let subdelete = accessnotes.splice(id,1)
+        setAccessnotes(subdelete)
+        localStorage.setItem("Notes", JSON.stringify(accessnotes))
+        
+    }
     return (
         <div className="container Notes">
             {accessnotes.map((obj, id)=>{
                 return(
                     <div key={id} className="note">
-                        <div className="bin"><span>🗑</span></div>
+                        <div className="bin"><span onClick={()=>deletenotes(id)}>🗑</span></div>
                         <div className="title">{obj.title}</div>
                         <div>{ obj.notecontent }</div>
                         
