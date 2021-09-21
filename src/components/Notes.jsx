@@ -12,10 +12,13 @@ function Notes() {
     }, [])
     return (
         <div className="container Notes">
-            {accessnotes.map((obj)=>{
+            {accessnotes.map((obj, id)=>{
                 return(
-                    <div>
-                        {obj.title}
+                    <div key={id} className="note">
+                        <div className="bin"><span>🗑</span></div>
+                        <div className="title">{obj.title}</div>
+                        <div>{ obj.notecontent }</div>
+                        
                     </div>
                 )
             })}
