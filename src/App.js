@@ -1,4 +1,5 @@
 import HomePage from './pages/HomePage'
+import './index.scss'
 function App() {
   return (
     <div className="App">

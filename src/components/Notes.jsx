@@ -15,6 +15,7 @@ function Notes() {
         let subdelete = accessnotes.splice(id,1)
         setAccessnotes(subdelete)
         localStorage.setItem("Notes", JSON.stringify(accessnotes))
+        window.location.reload()
         
     }
     return (

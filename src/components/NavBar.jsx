@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import logo from '../images/logo.png'
 import './NavBar.scss'
 function NavBar() {
     const [shownav, setShownav] = useState(false)
@@ -21,21 +22,17 @@ function NavBar() {
         setShownav(false)
         setNotenote("")
         setNotetitle("")
-        alert("Note successfully created")
+        window.location.reload()
     }
-    const deleteallnotes = () => {
-        alert("delet")
-            localStorage.removeItem("Notes") 
-    }
+
     return (
         <div className="NavBar ">
             <div className="nav">
                 <div>
-                    logo
+                    <img src={logo} alt="logo" style={{width:"70px"}}/>
                 </div>
                 <div>
                     <button onClick={()=>setShownav(true)} className="create">🖋 Create a new note</button>
-                    <button onClick={ deleteallnotes } className="create">🗑 Delete all notes note</button>
                 </div>
             </div>
             {shownav ?
@@ -50,7 +47,10 @@ function NavBar() {
                     <div className="ctas">
                         <button onClick={addnote}>Add to notes</button>
                         <button className="close-button" onClick={ () => setShownav(false) }>Close</button>  
-                    </div>   
+                    </div>  
+                    <div>
+                        Crafted by <a href="https://github.com/devpenzil">Devpenzil</a>
+                    </div> 
                 </div>
                     
             </div>
